@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   end
 
   def index
+    @books= Book.all
   end
 
   def user_params

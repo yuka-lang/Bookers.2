@@ -1,5 +1,7 @@
 class Book < ApplicationRecord
-  attachment :image
+
    belongs_to :user
+   attachment :image
+   attachment :profile_image
 
 end

@@ -1,2 +1,14 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<%= render 'books/list', book: @book %>
+ 
+ <div class='col-md-8 offset-md-1'>
+  		<h2>Book detail</h2>
+  		<table class='table'>
+  		  <tbody>
+  		    
+  		      <%= form_with model:@user, local:true do |f| %>
+  		      <tr> <%= attachment_image_tag @book, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%></tr>
+  		      <tr></tr>
+  		    <% end %>
+        </tbody>
+      </table>
+  </div>
