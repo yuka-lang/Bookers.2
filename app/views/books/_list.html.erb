@@ -1,27 +1,25 @@
  <p id="notice">
    Welcome! You have signed up successfully.
  </p>
-        <div class='container px-5 px-sm-0'>
+    <div class='container px-5 px-sm-0'>
   <div class='row'>
     <div class='col-md-3'>
       <h2>User info</h2>
       <table class='table'>
         <tr>
-        <%= attachment_image_tag book,:profile_image_id, :fill, 100, 100, format:'jpg', fallback:"no_image.jpg" %>
+        <%= attachment_image_tag @user,:profile_image, :fill, 100, 100, format:'jpeg', fallback:"no_image.jpg" %>
        </tr>
   <tr>
 	  <th>name</th>
-	  <th>test.test</th>
-  </tr>
+	  <th>test</th>
+	  </tr>
   <tr>
 	  <th>introduction</th>
 	  <th></th>
   </tr>
 </table>
 <div class='row'>
-  <a class="btn btn-outline-secondary btn-block fas fa-user-cog edit_user_38269 " href="/users/38269/edit">
-    <i class="fas fa-user-cog"></i>
-  </a>
+   <%= link_to '',edit_user_path(@user), class: "btn btn-outline-secondary btn-block fas fa-user-cog" %>
 
 </div>
       <h2 class="mt-3">New book</h2>
@@ -36,7 +34,6 @@
     <label for="book_opinion">Opinion</label>
     <%= f.text_area :body %>
 
-</textarea>
   </div>
   <div class="form-group">
 
@@ -44,5 +41,4 @@
 
   </div>
   <% end %>
-</form>
 </div>
