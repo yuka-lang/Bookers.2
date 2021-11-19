@@ -20,7 +20,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :password %><br>
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
@@ -28,11 +28,14 @@
     <%= f.label :password_confirmation %><br>
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
+  <br>
 
   <div class="actions">
     <%= f.submit 'Sign up',class:"btn btn-sm btn-success" %>
   </div>
        <% end %>
 
+  <a href="/users/sign_in">Log in</a>
+  <br>
 
-  <a href="/books">Log in</a>
+

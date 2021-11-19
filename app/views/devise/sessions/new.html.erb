@@ -24,13 +24,10 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
-    <!--<input type="submit" name="commit" value="Log in" class="btn btn-sm btn-primary" data-disable-with="Log in"/>-->
+    <%= f.submit "Log in" ,class:"btn btn-sm btn-primary" %>
   </div>
 <% end %>
-
-<%= link_to "Login",books_path  %>
-</form>      
+</form>
   <a href="/users/sign_up">Sign up</a><br>
 
   <a href="/users/password/new">Forgot your password?</a><br>
