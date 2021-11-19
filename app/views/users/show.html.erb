@@ -13,6 +13,7 @@
   </tr>
   <tr>
 	  <th>introduction</th>
+	  <th></th>
   </tr>
 </table>
  <div class='row'>
@@ -44,11 +45,17 @@
   		<h2>Book detail</h2>
   		<table class='table'>
   		  <tbody>
+  		    <tr>
+  		    <tb><%= @user.name %></tb>
+  		      <td><%= attachment_image_tag @book, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %></td>
+  		      <td><%= @book.name %></td>
+  		      <td><%= @book.title %></td>
+  		      <td><%= @book.body %></td>
+  		      <td><%= submit 'Edit',class:"btn btn-success" %></td>
+  		      <td><%= submit 'Destroy', class:"btn btn-danger" %></tr>
 
-  		      <%= form_with model:@user, local:true do |f| %>
-  		      <tr> <%= attachment_image_tag @book, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%></tr>
-  		      <tr></tr>
   		    <% end %>
+  		    </tr>
         </tbody>
       </table>
   </div>

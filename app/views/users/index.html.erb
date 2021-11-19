@@ -1,18 +1,20 @@
  <p id="notice">Welcome! You have signed up successfully.</p>
         <div class='container px-5 px-sm-0'>
   <div class='row'>
-    <div class='col-md-3'>
+  <div class='col-md-3'>
       <h2>User info</h2>
-      <table class='table'>
+    <table class='table'>
         <tr>
         <%= attachment_image_tag @user,:profile_image, :fill, 100, 100, format:'jpeg', fallback:"no_image.jpg" %>
        </tr>
-      <tr>
+   <tr>
 	  <th>name</th>
 	  <th>test.test</th>
   </tr>
   <tr>
 	  <th>introduction</th>
+	  <th> </th>
+	  <!--↑空欄-->
   </tr>
 </table>
  <div class='row'>
@@ -63,7 +65,6 @@
     </tr>
   </tbody>
 </table>
-
-    </div>
+</div>
 
 
