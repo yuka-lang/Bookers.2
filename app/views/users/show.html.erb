@@ -9,11 +9,11 @@
        </tr>
       <tr>
 	  <th>name</th>
-	  <th>test.test</th>
+	  <th><%= @user.name %></th>
   </tr>
   <tr>
 	  <th>introduction</th>
-	  <th></th>
+	  <th><%= @user.introduction ></th>
   </tr>
 </table>
  <div class='row'>
@@ -51,8 +51,8 @@
   		      <td><%= @book.name %></td>
   		      <td><%= @book.title %></td>
   		      <td><%= @book.body %></td>
-  		      <td><%= submit 'Edit',class:"btn btn-success" %></td>
-  		      <td><%= submit 'Destroy', class:"btn btn-danger" %></tr>
+  		      <!--<td><%= submit 'Edit',class:"btn btn-success" %></td>-->
+  		      <!--<td><%= submit 'Destroy', class:"btn btn-danger" %></tr>-->
 
   		    <% end %>
   		    </tr>

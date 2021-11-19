@@ -26,10 +26,7 @@
     <% if user_signed_in? %>
      <ul class="navbar-nav ml-auto">
      <li>
-       <a class="fas fa-home nav-link text-light" href="/books">
-         Home
-      </a>
-        <!--<%= link_to "Home", user_path(current_user.id), class: 'nav-link text-white' %>-->
+        <%= link_to "Home", user_path(current_user.id), class: "nav-link text-white fas fa-home nav-link text-light" %>
 
       </li>
 
@@ -46,10 +43,7 @@
       </li>
 
      <li>
-       <a class="fas fa-sign-out-alt nav-link text-light" rel="nofollow" data-method="delete" href="users/sign_out">
-         Log out
-       </a>
-      <!--<%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-white' %>-->
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt nav-link text-light" %>
     </li>
 
   </ul>
