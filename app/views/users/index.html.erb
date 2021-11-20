@@ -53,17 +53,20 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <tr>
-        <% @books.each do |book| %>
-        <td><%= book.title %></td>
+    <% @users.each do |user| %>
+     <tr>
+       <td>
+          <%= attachment_image_tag user, :profile_image_id , :fill, 60, 60, fallback: "no_image.jpg" %>
+       </td>
+       <td>
+          <%= user.name %>
+        </td>
+       <td>
+         <%= link_to "Show", user_path(current_user.id) %>
+       </td>
+     </tr>
+     <% end %>
 
-      </tr>
-      <% end %>
-    </tr>
-    <td>
-      <%= link_to 'Show', user_path,  class:"user_38873" %>
-      <!--<a class="user_38873" href="/users/38873">Show</a></td>-->
   </tbody>
 </table>
 </div>
