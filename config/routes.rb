@@ -4,5 +4,4 @@ Rails.application.routes.draw do
     resources :books
     get 'home/about' => "homes#index"
     resources :users, only: [:show  ,:index ,:edit ,:update]
-    post '/users' => "books#create"
 end
