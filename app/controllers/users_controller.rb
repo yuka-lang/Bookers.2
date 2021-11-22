@@ -2,8 +2,9 @@ class UsersController < ApplicationController
    before_action :current_user, only: [:edit]
 
   def show
+    # @user = current_user
     @user = User.find(params[:id])
-    @books = @user.books
+    @books = Book.where(user_id:@user.id)
     @book = Book.new
   end
 

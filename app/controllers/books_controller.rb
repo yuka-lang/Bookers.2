@@ -13,7 +13,6 @@ class BooksController < ApplicationController
     flash[:notice] = "You have created book successfully."
    else
      @books = Book.all
-     @user = current_user
      render:index
    end
   end
@@ -25,10 +24,9 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = Book.new
-    @user = current_user
-    # @user= User.find(params[:id])
-    @books = Book.find(params[:id])
+    @newbook = Book.new
+    @book = Book.find(params[:id])
+    @user = @book.user
   end
 
    def destroy
