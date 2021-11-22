@@ -1,8 +1,15 @@
 class UsersController < ApplicationController
-   before_action :current_user, only: [:edit]
+ before_action :ensure_current_user, only: [:edit]
+
+   def ensure_current_user
+      @user = User.find(params[:id])
+      if current_user != User.find_by(id: @user.id)
+          redirect_to user_path(@user.id)
+      end
+   end
+
 
   def show
-    # @user = current_user
     @user = User.find(params[:id])
     @books = Book.where(user_id:@user.id)
     @book = Book.new
