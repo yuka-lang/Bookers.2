@@ -14,7 +14,7 @@
       		   <td><%=link_to @books.title ,book_path %></td>
       		   <td><%= @books.body %></td>
 
-      		   <% if @user.user_id == current_user.id %>
+      		    <% if @books.user_id == current_user.id %>
       		    <td><%= link_to "Edit" , edit_book_path ,class:"btn btn-success" %></td>
        		   <td>
       		        <%= link_to "Distroy", book_path(@books), method: :delete ,"data-confirm" => "本当に削除しますか？" , class:"btn btn-danger" %>
