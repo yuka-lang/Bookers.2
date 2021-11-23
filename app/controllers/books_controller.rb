@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   before_action :current_user, only: [:edit]
+  before_action :login_check, only: [:edit, :update, :show, :destroy]
 
   def new
     @book = Book.new
@@ -55,6 +56,12 @@ class BooksController < ApplicationController
 
   def book_params
      params.require(:book).permit(:title, :body , :user_id)
+  end
+
+  def login_check
+  unless user_signed_in?
+    redirect_to new_user_session_path
+  end
   end
 
 end

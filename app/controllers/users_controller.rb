@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
  before_action :ensure_current_user, only: [:edit]
+ before_action :login_check, only: [:edit, :update, :show, :update]
 
    def ensure_current_user
       @user = User.find(params[:id])
       if current_user != User.find_by(id: @user.id)
-          redirect_to user_path(@user.id)
+          redirect_to user_path(current_user)
       end
    end
 
@@ -42,4 +43,11 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :introduction ,:profile_image)
   end
+
+  def login_check
+  unless user_signed_in?
+    redirect_to new_user_session_path
+  end
+  end
+
 end
